@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0af5e7ff93724feba05de6474881389e" Name="Diagram1">
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Categories" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Discounts" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Ingredients" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.OrderItems" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Orders" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.OrderStatuses" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.PaymentMethods" Width="1.5" PointX="6" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Payments" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.ProductDiscounts" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.ProductIngredients" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Products" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Reviews" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Roles" Width="1.5" PointX="1.5" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Suppliers" Width="1.5" PointX="6" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Supplies" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.Users" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.OrderSummary" Width="1.5" PointX="10.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeBarDBModel.ProductDetails" Width="1.5" PointX="10.75" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Products__Catego__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__ProductDi__Disco__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__ProductIn__Ingre__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Supplies__Ingred__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__OrderItem__Order__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__OrderItem__Produ__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Orders__StatusID__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Orders__UserID__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Payments__OrderI__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Payments__Paymen__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__ProductDi__Produ__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__ProductIn__Produ__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Reviews__Product__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Reviews__UserID__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Users__RoleID__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeBarDBModel.FK__Supplies__Suppli__68487DD7" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

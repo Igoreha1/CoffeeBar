@@ -1,0 +1,130 @@
+﻿<Window x:Class="CoffeeBar.Views.CartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ваша корзина" 
+        Width="500" 
+        Height="600"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#FFF9F5F0"
+        FontFamily="Segoe UI">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="🛒 Ваша корзина" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Foreground="#FF6D4C41"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <!-- Список товаров -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="CartItemsControl">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="White" 
+                                BorderBrush="#FFD7CCC8" 
+                                BorderThickness="1" 
+                                CornerRadius="8" 
+                                Margin="0,10" 
+                                Padding="15">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="{Binding ProductName}" 
+                                               FontWeight="Bold" 
+                                               FontSize="16"/>
+                                    <TextBlock Text="{Binding Price, StringFormat='Цена: {0} руб'}" 
+                                               Foreground="#FF6D4C41"/>
+                                </StackPanel>
+
+                                <!-- Количество -->
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0">
+                                    <Button Content="-" 
+                                            Width="30" 
+                                            Height="30" 
+                                            Click="DecreaseQuantity_Click" 
+                                            Tag="{Binding ProductID}"
+                                            Background="#FFF5E9E0"
+                                            BorderBrush="#FFA1887F"/>
+                                    <TextBlock Text="{Binding Quantity}" 
+                                               Width="30" 
+                                               TextAlignment="Center" 
+                                               VerticalAlignment="Center" 
+                                               FontSize="16" 
+                                               FontWeight="Bold"/>
+                                    <Button Content="+" 
+                                            Width="30" 
+                                            Height="30" 
+                                            Click="IncreaseQuantity_Click" 
+                                            Tag="{Binding ProductID}"
+                                            Background="#FFF5E9E0"
+                                            BorderBrush="#FFA1887F"/>
+                                </StackPanel>
+
+                                <!-- Удалить -->
+                                <Button Grid.Column="2" 
+                                        Content="🗑️" 
+                                        ToolTip="Удалить" 
+                                        Width="35" 
+                                        Height="35" 
+                                        Click="RemoveItem_Click" 
+                                        Tag="{Binding ProductID}"
+                                        Background="Transparent"
+                                        Foreground="Red"
+                                        BorderThickness="0"
+                                        VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <!-- Итого и кнопки -->
+        <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0,20,0,0">
+            <TextBlock x:Name="TotalTextBlock" 
+                       Text="Итого: 0 руб" 
+                       FontSize="20" 
+                       FontWeight="Bold" 
+                       Foreground="#FF6D4C41"
+                       HorizontalAlignment="Right"
+                       Margin="0,0,0,15"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Очистить" 
+                        Click="ClearCart_Click"
+                        Background="#FFF5E9E0"
+                        Foreground="#FF6D4C41"
+                        BorderBrush="#FFA1887F"
+                        Padding="15,5"
+                        Margin="0,0,10,0"/>
+
+                <Button Content="Оформить заказ" 
+                        Click="Checkout_Click"
+                        Background="#FF6D4C41"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Padding="15,5"
+                        Margin="0,0,10,0"/>
+
+                <Button Content="Закрыть" 
+                        Click="Close_Click"
+                        Background="#FF9E9E9E"
+                        Foreground="White"
+                        Padding="15,5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

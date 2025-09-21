@@ -1,0 +1,104 @@
+﻿<Window x:Class="CoffeeBar.Views.ProductEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование товара" 
+        Height="500" 
+        Width="600"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        MouseDown="Window_MouseDown">
+
+    <Border CornerRadius="12" Background="White" BorderBrush="#FFE0E0E0" BorderThickness="1">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="20" ShadowDepth="3" Color="#888888" Opacity="0.3"/>
+        </Border.Effect>
+
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Заголовок -->
+            <TextBlock Grid.Row="0" 
+                       Text="{Binding TitleText, RelativeSource={RelativeSource AncestorType=Window}}" 
+                       FontSize="22" 
+                       FontWeight="Bold" 
+                       Foreground="#FF5D4037"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <!-- Форма -->
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Название:" Width="120" VerticalAlignment="Center"/>
+                    <TextBox x:Name="ProductNameBox" Width="350" Height="32" Padding="8" FontSize="14"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Описание:" Width="120" VerticalAlignment="Top" Margin="0,8,0,0"/>
+                    <TextBox x:Name="DescriptionBox" Width="350" Height="80" Padding="8" FontSize="14" TextWrapping="Wrap" AcceptsReturn="True"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Цена (₽):" Width="120" VerticalAlignment="Center"/>
+                    <TextBox x:Name="PriceBox" Width="350" Height="32" Padding="8" FontSize="14"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Категория:" Width="120" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="CategoryComboBox" Width="350" Height="32" FontSize="14" DisplayMemberPath="CategoryName" SelectedValuePath="CategoryID"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Доступен:" Width="120" VerticalAlignment="Center"/>
+                    <CheckBox x:Name="IsAvailableBox" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Кнопки -->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Content="💾 Сохранить" 
+                        Click="Save_Click"
+                        Background="#FF4CAF50"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Width="150"
+                        Height="40"/>
+
+                <Button Content="❌ Отмена" 
+                        Click="Cancel_Click"
+                        Background="#FF9E9E9E"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Width="150"
+                        Height="40"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+
+    <Window.Resources>
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="8"
+                                BorderThickness="0"
+                                Padding="15,8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </Window.Resources>
+</Window>
