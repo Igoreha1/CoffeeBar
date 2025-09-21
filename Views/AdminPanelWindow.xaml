@@ -47,7 +47,6 @@
 
             </StackPanel>
 
-            <!-- Список товаров -->
             <DataGrid x:Name="ProductsDataGrid" 
                       Grid.Row="1" 
                       AutoGenerateColumns="False"
